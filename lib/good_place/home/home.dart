@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:good_place/theme.dart';
 import 'package:good_place/widgets/base_scaffold.dart';
 import 'package:good_place/widgets/header.dart';
 
