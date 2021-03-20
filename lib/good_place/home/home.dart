@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:good_place/theme.dart';
+import 'package:good_place/widgets/base_scaffold.dart';
+import 'package:good_place/widgets/header.dart';
 
 class Home extends StatelessWidget {
   final Widget child;
@@ -8,13 +10,11 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: child,
-        decoration: BoxDecoration(
-          border: Border.all(color: CustomColors.dark_gray),
-          borderRadius: BorderRadius.circular(20),
-        ),
+    return BaseScaffold(
+      child: Column(
+        children: [
+          Header(),
+        ],
       ),
     );
   }

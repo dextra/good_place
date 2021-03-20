@@ -9,6 +9,7 @@ class BaseScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: CustomColors.background,
       body: Container(
         padding: EdgeInsets.all(20),
         margin: EdgeInsets.all(30),
@@ -17,7 +18,7 @@ class BaseScaffold extends StatelessWidget {
         child: child,
         decoration: BoxDecoration(
           border: Border.all(color: CustomColors.dark_gray, width: 4),
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(40),
         ),
       ),
     );
