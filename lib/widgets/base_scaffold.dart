@@ -11,14 +11,20 @@ class BaseScaffold extends StatelessWidget {
     return Scaffold(
       backgroundColor: CustomColors.background,
       body: Container(
-        padding: EdgeInsets.all(20),
-        margin: EdgeInsets.all(30),
-        width: double.infinity,
         height: double.infinity,
-        child: child,
-        decoration: BoxDecoration(
-          border: Border.all(color: CustomColors.dark_gray, width: 4),
-          borderRadius: BorderRadius.circular(40),
+        child: ListView(
+          children: [
+            Container(
+              child: child,
+              padding: EdgeInsets.all(30),
+              margin: EdgeInsets.all(30),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border.all(color: CustomColors.dark_gray, width: 4),
+                borderRadius: BorderRadius.circular(40),
+              ),
+            ),
+          ],
         ),
       ),
     );

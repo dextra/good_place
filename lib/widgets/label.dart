@@ -4,10 +4,12 @@ import 'package:good_place/theme.dart';
 class Label extends StatelessWidget {
   final String text;
   final LabelType labelType;
+  final TextAlign textAlign;
 
   const Label({
     @required this.text,
     this.labelType = LabelType.text,
+    this.textAlign = TextAlign.left,
   });
 
   @override
@@ -15,11 +17,12 @@ class Label extends StatelessWidget {
     return Text(
       text,
       style: labelType.style(context),
+      textAlign: textAlign,
     );
   }
 }
 
-enum LabelType { text, topMenu, title }
+enum LabelType { text, topMenu, title, bitTitle }
 
 extension _LabelStyle on LabelType {
   TextStyle style(BuildContext context) {
@@ -39,8 +42,15 @@ extension _LabelStyle on LabelType {
         break;
       case LabelType.title:
         return TextStyle(
-          fontSize: 48,
+          fontSize: 36,
           fontWeight: FontWeight.w300,
+          color: CustomColors.dark_gray,
+        );
+        break;
+      case LabelType.bitTitle:
+        return TextStyle(
+          fontSize: 144,
+          fontWeight: FontWeight.w800,
           color: CustomColors.dark_gray,
         );
         break;
