@@ -49,8 +49,8 @@ extension _LabelStyle on LabelType {
         break;
       case LabelType.bitTitle:
         return TextStyle(
-          fontSize: 144,
-          fontWeight: FontWeight.w800,
+          fontSize: 130,
+          fontWeight: FontWeight.bold,
           color: CustomColors.dark_gray,
         );
         break;

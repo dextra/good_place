@@ -6,15 +6,22 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Padding(
           child: Image.asset(Assets.logo),
           padding: EdgeInsets.only(top: 10),
         ),
-        _MenuItem(label: 'Quem somos'),
-        _MenuItem(label: 'O que fazemos'),
-        _MenuItem(label: 'Últimas ações'),
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _MenuItem(label: 'Quem somos'),
+              _MenuItem(label: 'O que fazemos'),
+              _MenuItem(label: 'Últimas ações'),
+            ],
+          ),
+        ),
       ],
     );
   }

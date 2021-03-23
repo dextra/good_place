@@ -16,11 +16,11 @@ class BaseScaffold extends StatelessWidget {
           children: [
             Container(
               child: child,
-              padding: EdgeInsets.all(30),
-              margin: EdgeInsets.all(30),
+              padding: EdgeInsets.all(40),
+              margin: EdgeInsets.all(40),
               width: double.infinity,
               decoration: BoxDecoration(
-                border: Border.all(color: CustomColors.dark_gray, width: 4),
+                color: CustomColors.white,
                 borderRadius: BorderRadius.circular(40),
               ),
             ),

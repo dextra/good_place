@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 100),
+                padding: const EdgeInsets.only(right: 80),
                 child: Label(
                   text: 'Liga\ndo\nBEM',
                   labelType: LabelType.bitTitle,
@@ -34,6 +34,7 @@ class Home extends StatelessWidget {
               SizedBox(height: 200),
             ],
           ),
+          SizedBox(height: 120),
           Label(
             text: 'Últimas ações',
             labelType: LabelType.title,
