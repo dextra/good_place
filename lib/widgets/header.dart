@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:good_place/routes.dart';
+import 'package:good_place/theme.dart';
 import 'package:good_place/utils/assets.dart';
 import 'package:good_place/widgets/label.dart';
 
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final routeName = ModalRoute.of(context).settings.name;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -12,15 +16,26 @@ class Header extends StatelessWidget {
           child: Image.asset(Assets.logo),
           padding: EdgeInsets.only(top: 10),
         ),
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _MenuItem(label: 'Quem somos'),
-              _MenuItem(label: 'O que fazemos'),
-              _MenuItem(label: 'Últimas ações'),
-            ],
-          ),
+        SizedBox(width: 40),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _MenuItem(
+              label: 'Quem somos',
+              selected: routeName == Routes.whoWeAre,
+            ),
+            SizedBox(width: 40),
+            _MenuItem(
+              label: 'O que fazemos',
+              selected: routeName == Routes.whatWeDo,
+            ),
+            SizedBox(width: 40),
+            _MenuItem(
+              label: 'Nossas ações',
+              selected: routeName == Routes.ourActions,
+            ),
+          ],
         ),
       ],
     );
@@ -30,16 +45,32 @@ class Header extends StatelessWidget {
 class _MenuItem extends StatelessWidget {
   final String label;
   final Function navigateTo;
+  final bool selected;
 
-  const _MenuItem({this.label, this.navigateTo});
+  const _MenuItem({this.label, this.navigateTo, this.selected});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: navigateTo,
-      child: Label(
-        text: label,
-        labelType: LabelType.topMenu,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Label(
+            text: label.toUpperCase(),
+            labelType: LabelType.topMenu,
+          ),
+          Visibility(
+            visible: selected,
+            child: Container(
+              margin: EdgeInsets.only(top: 5),
+              color: CustomColors.crazy_green,
+              height: 6,
+              width: 100,
+            ),
+          ),
+        ],
       ),
     );
   }

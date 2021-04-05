@@ -22,18 +22,12 @@ dev_dependencies:
 
 flutter:
   fonts:
-      - family: SulSans
+      - family: MaisonNeue
         fonts:
-          - asset: assets/fonts/SulSans-Bold.ttf
-            weight: 700
-          - asset: assets/fonts/SulSans-BoldItalic.ttf
-            style: italic
-          - asset: assets/fonts/SulSans-Light.ttf
-            weight: 300
-          - asset: assets/fonts/SulSans-Medium.ttf
-            weight: 400
-          - asset: assets/fonts/SulSans-Regular.ttf
+          - asset: assets/fonts/MaisonNeue-Bold.ttf
+          - asset: assets/fonts/MaisonNeue-Light.ttf
+          - asset: assets/fonts/MaisonNeue-Medium.ttf
   uses-material-design: true
   assets:
     - assets/images/
-    - data/
+    - assets/data/

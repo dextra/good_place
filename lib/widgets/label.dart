@@ -18,11 +18,20 @@ class Label extends StatelessWidget {
       text,
       style: labelType.style(context),
       textAlign: textAlign,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }
 
-enum LabelType { text, topMenu, title, bitTitle }
+enum LabelType {
+  text,
+  topMenu,
+  title,
+  bigTitle,
+  cardTitle,
+  cardBodyTitle,
+  link
+}
 
 extension _LabelStyle on LabelType {
   TextStyle style(BuildContext context) {
@@ -35,8 +44,8 @@ extension _LabelStyle on LabelType {
         break;
       case LabelType.topMenu:
         return TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.w300,
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
           color: CustomColors.dark_gray,
         );
         break;
@@ -47,11 +56,29 @@ extension _LabelStyle on LabelType {
           color: CustomColors.dark_gray,
         );
         break;
-      case LabelType.bitTitle:
+      case LabelType.bigTitle:
         return TextStyle(
-          fontSize: 130,
+          fontSize: 170,
+          color: CustomColors.dark_gray,
+        );
+        break;
+      case LabelType.cardTitle:
+        return TextStyle(
+          fontSize: 24,
           fontWeight: FontWeight.bold,
           color: CustomColors.dark_gray,
+        );
+        break;
+      case LabelType.cardBodyTitle:
+        return TextStyle(
+          fontSize: 18,
+          color: CustomColors.dark_gray,
+        );
+        break;
+      case LabelType.link:
+        return TextStyle(
+          fontSize: 18,
+          color: CustomColors.link,
         );
         break;
       default:
