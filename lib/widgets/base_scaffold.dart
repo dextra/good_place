@@ -1,70 +1,65 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:good_place/good_place/home/image_painter.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:good_place/utils/assets.dart';
 import 'package:good_place/widgets/header.dart';
 import 'package:good_place/widgets/label.dart';
 
 class BaseScaffold extends StatelessWidget {
   final Widget child;
-  final String title;
 
-  const BaseScaffold({this.child, this.title = 'liga do\nbem'});
+  const BaseScaffold({this.child});
 
   @override
   Widget build(BuildContext context) {
-    final maxScreenSize = max(
-        MediaQuery.of(context).size.width, MediaQuery.of(context).size.height);
-
-    final ballSize = maxScreenSize * 0.5;
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: ClampingScrollPhysics(),
         children: [
-          Stack(
-            children: [
-              Positioned(
-                right: 0,
-                child: Container(
-                  width: ballSize,
-                  height: ballSize,
-                  child: CustomPaint(
-                    painter: ImagePainter(),
-                  ),
-                ),
-              ),
-              Positioned(
-                right: ballSize * 0.6,
-                top: ballSize * 0.2,
-                child: Align(
-                  child: Image.asset(Assets.personWithHeart),
-                  alignment: Alignment.bottomLeft,
-                ),
-              ),
-              Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                SizedBox(height: 20),
+                Header(),
+                SizedBox(height: 30),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Header(),
-                    SizedBox(height: 100),
-                    Padding(
-                      padding: EdgeInsets.only(left: maxScreenSize * 0.05),
-                      child: Label(
-                        text: title,
-                        labelType: LabelType.bigTitle,
-                      ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          Assets.heartBallon,
+                          height: 100,
+                        ),
+                        SizedBox(width: 30),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Label(
+                              text: 'Comitê',
+                              labelType: LabelType.bigTitleBold,
+                            ),
+                            Label(
+                              text: 'liga do bem',
+                              labelType: LabelType.bigTitle,
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 120),
-                    child,
+                    SvgPicture.asset(
+                      Assets.personWithHeart,
+                      height: 900,
+                    ),
                   ],
                 ),
-                margin: EdgeInsets.all(60),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

@@ -10,7 +10,7 @@ class Header extends StatelessWidget {
     final routeName = ModalRoute.of(context).settings.name;
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Padding(
           child: Image.asset(Assets.logo),
@@ -25,14 +25,19 @@ class Header extends StatelessWidget {
               label: 'Quem somos',
               selected: routeName == Routes.whoWeAre,
             ),
-            SizedBox(width: 40),
+            SizedBox(width: 60),
             _MenuItem(
-              label: 'O que fazemos',
+              label: 'Notícias',
               selected: routeName == Routes.whatWeDo,
             ),
-            SizedBox(width: 40),
+            SizedBox(width: 60),
             _MenuItem(
-              label: 'Nossas ações',
+              label: 'Ações',
+              selected: routeName == Routes.ourActions,
+            ),
+            SizedBox(width: 60),
+            _MenuItem(
+              label: 'Sugestões',
               selected: routeName == Routes.ourActions,
             ),
           ],
