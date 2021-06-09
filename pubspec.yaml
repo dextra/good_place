@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   dashbook: ^0.1.0
   flutter_svg: ^0.22.0
+  carousel_slider: ^3.0.0
 
   cupertino_icons: ^1.0.2
 
