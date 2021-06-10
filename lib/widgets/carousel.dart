@@ -23,29 +23,26 @@ class _CarouselState extends State<Carousel> {
             aspectRatio: 2.0,
             enlargeCenterPage: true,
             onPageChanged: (index, reason) {
-              setState(() {
-                _current = index;
-              });
+              setState(() => _current = index);
             },
           ),
           items: widget.items,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: widget.items.map((url) {
-            int index = widget.items.indexOf(url);
-            return Container(
-              width: 8.0,
-              height: 8.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _current == index
-                    ? Color.fromRGBO(0, 0, 0, 0.9)
-                    : Color.fromRGBO(0, 0, 0, 0.4),
-              ),
-            );
-          }).toList(),
+          children: widget.items
+              .map((item) => Container(
+                    width: 8.0,
+                    height: 8.0,
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 2),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: _current == widget.items.indexOf(item)
+                          ? Color.fromRGBO(0, 0, 0, 0.9)
+                          : Color.fromRGBO(0, 0, 0, 0.4),
+                    ),
+                  ))
+              .toList(),
         ),
       ],
     );
