@@ -28,6 +28,8 @@ enum LabelType {
   topMenu,
   title,
   bigTitle,
+  mediumTitle,
+  littleTitle,
   bigTitleBold,
   cardTitle,
   cardBody,
@@ -61,6 +63,18 @@ extension _LabelStyle on LabelType {
       case LabelType.bigTitle:
         return TextStyle(
           fontSize: 70,
+          color: CustomColors.dark_gray,
+        );
+        break;
+      case LabelType.mediumTitle:
+        return TextStyle(
+          fontSize: 50,
+          color: CustomColors.dark_gray,
+        );
+        break;
+      case LabelType.littleTitle:
+        return TextStyle(
+          fontSize: 45,
           color: CustomColors.dark_gray,
         );
         break;

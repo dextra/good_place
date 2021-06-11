@@ -26,17 +26,17 @@ class BeanCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(image, height: 250),
+              Image.asset(image, height: 200),
               if (label != null)
                 Label(
                   text: label,
-                  labelType: LabelType.bigTitle,
+                  labelType: LabelType.mediumTitle,
                 ),
             ],
           ),
         ),
         Positioned(
-          bottom: 150,
+          bottom: 30,
           child: Button(
             label: buttonLabel,
             type: ButtonType.outline,

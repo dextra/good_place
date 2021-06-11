@@ -5,8 +5,9 @@ import 'package:good_place/widgets/label.dart';
 
 class News extends StatelessWidget {
   final List<NewsItem> items;
+  final String title;
 
-  const News({@required this.items});
+  const News({@required this.items, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +16,8 @@ class News extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Label(
-          text: 'Notícias',
-          labelType: LabelType.title,
+          text: title ?? 'Notícias',
+          labelType: LabelType.littleTitle,
         ),
         ...items.map(
           (item) => Column(

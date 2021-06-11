@@ -17,16 +17,19 @@ class _CarouselState extends State<Carousel> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CarouselSlider(
-          options: CarouselOptions(
-            autoPlay: true,
-            aspectRatio: 2.0,
-            enlargeCenterPage: true,
-            onPageChanged: (index, reason) {
-              setState(() => _current = index);
-            },
+        Container(
+          height: 500,
+          child: CarouselSlider(
+            options: CarouselOptions(
+              autoPlay: true,
+              aspectRatio: 2.0,
+              enlargeCenterPage: true,
+              onPageChanged: (index, reason) {
+                setState(() => _current = index);
+              },
+            ),
+            items: widget.items,
           ),
-          items: widget.items,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
