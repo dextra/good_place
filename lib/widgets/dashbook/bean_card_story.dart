@@ -1,5 +1,6 @@
 import 'package:dashbook/dashbook.dart';
 import 'package:flutter/material.dart';
+import 'package:good_place/utils/assets.dart';
 import 'package:good_place/widgets/bean_card.dart';
 
 class BeanCardStory {
@@ -10,11 +11,9 @@ class BeanCardStory {
       'default',
       (ctx) {
         return BeanCard(
-          content: Container(
-            color: Colors.cyan,
-            width: 100,
-            height: 100,
-          ),
+          image: Assets.logo,
+          buttonLabel: 'Saiba mais',
+          onTap: () {},
         );
       },
     );

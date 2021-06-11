@@ -13,8 +13,8 @@ import 'package:good_place/widgets/dashbook/news_story.dart';
 void main() {
   final dashbook = Dashbook(theme: ThemeData.light());
 
-  ButtonStory(dashbook);
   BeanCardStory(dashbook);
+  ButtonStory(dashbook);
   CarouselStory(dashbook);
   NewsStory(dashbook);
   HeaderStory(dashbook);
