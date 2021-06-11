@@ -6,7 +6,7 @@ void main() {
   runApp(MaterialApp(
     title: 'Liga do Bem',
     theme: GoodPlaceTheme.lightTheme,
-    initialRoute: Routes.home,
+    initialRoute: Routes.root,
     routes: Routes.routes,
   ));
 }

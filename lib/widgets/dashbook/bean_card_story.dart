@@ -1,5 +1,4 @@
 import 'package:dashbook/dashbook.dart';
-import 'package:flutter/material.dart';
 import 'package:good_place/utils/assets.dart';
 import 'package:good_place/widgets/bean_card.dart';
 

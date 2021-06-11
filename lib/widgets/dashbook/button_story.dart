@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:dashbook/dashbook.dart';
 import 'package:good_place/widgets/button.dart';
 
