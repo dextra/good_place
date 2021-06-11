@@ -11,7 +11,7 @@ class ActionsCarousel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Label(
-          text: 'Ações',
+          text: 'Ações recorrentes',
           labelType: LabelType.littleTitle,
         ),
         SizedBox(height: 50),
