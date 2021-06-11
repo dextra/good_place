@@ -22,6 +22,11 @@ class Header extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _MenuItem(
+              label: 'Home',
+              selected: routeName == Routes.root,
+            ),
+            SizedBox(width: 60),
+            _MenuItem(
               label: 'Quem somos',
               selected: routeName == Routes.whoWeAre,
             ),
@@ -59,7 +64,7 @@ class _MenuItem extends StatelessWidget {
     return GestureDetector(
       onTap: navigateTo,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Label(
