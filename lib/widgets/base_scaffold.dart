@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:good_place/widgets/good_place.dart';
 import 'package:good_place/widgets/header.dart';
 
 class BaseScaffold extends StatelessWidget {
@@ -21,7 +20,7 @@ class BaseScaffold extends StatelessWidget {
                 SizedBox(height: 20),
                 Header(),
                 SizedBox(height: 30),
-                GoodPlace(),
+                child,
               ],
             ),
           ),

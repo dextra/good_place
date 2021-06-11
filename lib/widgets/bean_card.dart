@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:good_place/utils/assets.dart';
 import 'package:good_place/widgets/button.dart';
+import 'package:good_place/widgets/label.dart';
 
 class BeanCard extends StatelessWidget {
   final String image;
+  final String label;
   final String buttonLabel;
   final VoidCallback onTap;
 
   BeanCard({
-    this.image,
-    this.buttonLabel,
-    this.onTap,
+    @required this.image,
+    @required this.buttonLabel,
+    @required this.onTap,
+    this.label,
   });
 
   @override
@@ -21,15 +24,23 @@ class BeanCard extends StatelessWidget {
         Image.asset(Assets.bean),
         Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(image),
-              Button(
-                label: buttonLabel,
-                type: ButtonType.outline,
-                onTap: () {},
-              ),
+              Image.asset(image, height: 250),
+              if (label != null)
+                Label(
+                  text: label,
+                  labelType: LabelType.bigTitle,
+                ),
             ],
+          ),
+        ),
+        Positioned(
+          bottom: 150,
+          child: Button(
+            label: buttonLabel,
+            type: ButtonType.outline,
+            onTap: () {},
           ),
         ),
       ],

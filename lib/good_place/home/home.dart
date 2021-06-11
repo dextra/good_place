@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:good_place/good_place/home/actions_carousel.dart';
 import 'package:good_place/models/event.dart';
 import 'package:good_place/widgets/base_scaffold.dart';
+import 'package:good_place/widgets/good_place.dart';
 
 class Home extends StatelessWidget {
   final List<Event> events;
@@ -14,7 +16,10 @@ class Home extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [],
+        children: [
+          GoodPlace(),
+          ActionsCarousel(),
+        ],
       ),
     );
   }

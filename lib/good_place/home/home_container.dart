@@ -31,6 +31,9 @@ class _HomeContainerState extends State<HomeContainer> {
 
   @override
   Widget build(BuildContext context) {
-    return Home(events: _events, loading: _loading);
+    return Home(
+      events: _events,
+      loading: _loading,
+    );
   }
 }

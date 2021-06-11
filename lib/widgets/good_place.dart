@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:good_place/utils/assets.dart';
@@ -41,7 +43,7 @@ class GoodPlace extends StatelessWidget {
         ),
         SvgPicture.asset(
           Assets.personWithHeart,
-          height: 900,
+          height: MediaQuery.of(context).size.height * 0.7,
         ),
       ],
     );
