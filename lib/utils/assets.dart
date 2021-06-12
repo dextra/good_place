@@ -5,4 +5,5 @@ class Assets {
   static const bean = 'assets/images/bean.png';
   static const telavita = 'assets/images/telavita.png';
   static const yoga = 'assets/images/yoga.png';
+  static const goodPlacePeople = 'assets/images/good_place_people.png';
 }

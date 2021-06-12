@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:good_place/theme.dart';
 import 'package:good_place/widgets/header.dart';
 
 class BaseScaffold extends StatelessWidget {
@@ -13,16 +14,18 @@ class BaseScaffold extends StatelessWidget {
       body: ListView(
         physics: ClampingScrollPhysics(),
         children: [
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: Column(
-              children: [
-                SizedBox(height: 20),
-                Header(),
-                SizedBox(height: 30),
-                child,
-              ],
-            ),
+          Column(
+            children: [
+              SizedBox(height: 20),
+              Header(),
+              SizedBox(height: 30),
+              Container(
+                height: 1,
+                color: CustomColors.dark_gray,
+              ),
+              SizedBox(height: 30),
+              Padding(padding: EdgeInsets.all(10), child: child),
+            ],
           ),
         ],
       ),

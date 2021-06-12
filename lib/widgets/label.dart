@@ -80,7 +80,7 @@ extension _LabelStyle on LabelType {
         break;
       case LabelType.bigTitleBold:
         return TextStyle(
-          fontSize: 70,
+          fontSize: 80,
           color: CustomColors.dark_gray,
           fontWeight: FontWeight.w600,
         );
