@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:good_place/models/news_item.dart';
 import 'package:good_place/theme.dart';
+import 'package:good_place/utils/assets.dart';
 import 'package:good_place/widgets/label.dart';
+import 'package:intl/intl.dart';
 
 class News extends StatelessWidget {
   final List<NewsItem> items;
@@ -11,13 +13,25 @@ class News extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final format = new DateFormat('MMM/yyyy');
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Label(
-          text: title ?? 'Notícias',
-          labelType: LabelType.littleTitle,
+        Row(
+          children: [
+            Image.asset(
+              Assets.news,
+              width: 70,
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            Label(
+              text: title ?? 'Notícias',
+              labelType: LabelType.littleTitle,
+            ),
+          ],
         ),
         ...items.map(
           (item) => Column(
@@ -26,13 +40,22 @@ class News extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 15, bottom: 15),
                 child: Container(
                   child: Padding(
-                    padding: const EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Label(
-                          text: item.title,
-                          labelType: LabelType.cardTitle,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Label(
+                              text: item.title,
+                              labelType: LabelType.cardTitle,
+                            ),
+                            Label(
+                              text: format.format(item.date),
+                              labelType: LabelType.cardDate,
+                            ),
+                          ],
                         ),
                         SizedBox(height: 10),
                         Label(

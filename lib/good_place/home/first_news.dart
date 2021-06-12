@@ -11,20 +11,30 @@ class FirstNews extends StatelessWidget {
         title: 'Últimas notícias',
         items: [
           NewsItem(
-              title: 'Festa junina',
-              content: 'Festa junina Festa junina Festa junina'),
+            title: 'Festa junina',
+            content: 'Festa junina Festa junina Festa junina',
+            date: DateTime.now(),
+          ),
           NewsItem(
-              title: 'Festa junina',
-              content: 'Festa junina Festa junina Festa junina'),
+            title: 'Festa junina',
+            content: 'Festa junina Festa junina Festa junina',
+            date: DateTime.now(),
+          ),
           NewsItem(
-              title: 'Festa junina',
-              content: 'Festa junina Festa junina Festa junina'),
+            title: 'Festa junina',
+            content: 'Festa junina Festa junina Festa junina',
+            date: DateTime.now(),
+          ),
           NewsItem(
-              title: 'Festa junina',
-              content: 'Festa junina Festa junina Festa junina'),
+            title: 'Festa junina',
+            content: 'Festa junina Festa junina Festa junina',
+            date: DateTime.now(),
+          ),
           NewsItem(
-              title: 'Festa junina',
-              content: 'Festa junina Festa junina Festa junina'),
+            title: 'Festa junina',
+            content: 'Festa junina Festa junina Festa junina',
+            date: DateTime.now(),
+          ),
         ],
       ),
     );

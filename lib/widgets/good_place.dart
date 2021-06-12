@@ -41,7 +41,7 @@ class GoodPlace extends StatelessWidget {
         SizedBox(width: 50),
         Image.asset(
           Assets.goodPlacePeople,
-          height: MediaQuery.of(context).size.height * 0.75,
+          height: MediaQuery.of(context).size.height * 0.7,
         ),
       ],
     );

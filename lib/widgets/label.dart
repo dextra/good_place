@@ -31,6 +31,7 @@ enum LabelType {
   mediumTitle,
   littleTitle,
   bigTitleBold,
+  cardDate,
   cardTitle,
   cardBody,
   cardBodyTitle,
@@ -74,7 +75,7 @@ extension _LabelStyle on LabelType {
         break;
       case LabelType.littleTitle:
         return TextStyle(
-          fontSize: 45,
+          fontSize: 35,
           color: CustomColors.dark_gray,
         );
         break;
@@ -83,6 +84,13 @@ extension _LabelStyle on LabelType {
           fontSize: 80,
           color: CustomColors.dark_gray,
           fontWeight: FontWeight.w600,
+        );
+        break;
+      case LabelType.cardDate:
+        return TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: CustomColors.dark_gray,
         );
         break;
       case LabelType.cardTitle:
@@ -95,7 +103,6 @@ extension _LabelStyle on LabelType {
       case LabelType.cardBody:
         return TextStyle(
           fontSize: 18,
-          fontWeight: FontWeight.bold,
           color: CustomColors.dark_gray,
         );
         break;

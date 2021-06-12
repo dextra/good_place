@@ -6,4 +6,5 @@ class Assets {
   static const telavita = 'assets/images/telavita.png';
   static const yoga = 'assets/images/yoga.png';
   static const goodPlacePeople = 'assets/images/good_place_people.png';
+  static const news = 'assets/images/news.png';
 }
