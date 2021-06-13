@@ -28,8 +28,8 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              FirstNews(),
               ActionsCarousel(),
+              FirstNews(),
             ],
           ),
         ],
