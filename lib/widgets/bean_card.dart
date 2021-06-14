@@ -40,7 +40,7 @@ class BeanCard extends StatelessWidget {
           child: Button(
             label: buttonLabel,
             type: ButtonType.outline,
-            onTap: () {},
+            onTap: onTap,
           ),
         ),
       ],

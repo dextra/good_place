@@ -1,11 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:good_place/models/news_item.dart';
+import 'package:good_place/models/generic_item.dart';
 
 class LoadContent {
-  Future<List<NewsItem>> loadNews() async {
+  Future<List<GenericItem>> loadNews() async {
     String data = await rootBundle.loadString('assets/data/news.json');
-    return NewsItem.parseList(jsonDecode(data));
+    return GenericItem.parseList(jsonDecode(data))
+      ..sort((a, b) => b.date.compareTo(a.date));
   }
 }

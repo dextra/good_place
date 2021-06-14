@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:good_place/models/news_item.dart';
+import 'package:good_place/models/generic_item.dart';
 import 'package:good_place/widgets/news.dart';
 
 class FirstNews extends StatelessWidget {
-  final List<NewsItem> news;
+  final List<GenericItem> news;
 
   const FirstNews({this.news});
 
@@ -12,17 +12,8 @@ class FirstNews extends StatelessWidget {
     return Container(
       width: 400,
       child: News(
-        firstNews: true,
         title: 'Últimas notícias',
-        items: news
-            .map(
-              (item) => NewsItem(
-                title: item.title,
-                description: item.description,
-                date: item.date,
-              ),
-            )
-            .toList(),
+        items: news,
       ),
     );
   }

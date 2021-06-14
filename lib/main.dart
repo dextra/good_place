@@ -11,7 +11,7 @@ void main() {
       title: 'Liga do Bem',
       theme: GoodPlaceTheme.lightTheme,
       initialRoute: Routes.root,
-      routes: Routes.routes,
+      onGenerateRoute: Routes.generateRoutes,
     ),
   );
 }

@@ -26,6 +26,7 @@ class Label extends StatelessWidget {
 
 enum LabelType {
   text,
+  mediumText,
   topMenu,
   title,
   bigTitle,
@@ -45,6 +46,11 @@ extension _LabelStyle on LabelType {
       case LabelType.text:
         return TextStyle(
           fontSize: 12,
+          color: CustomColors.dark_gray,
+        );
+      case LabelType.mediumText:
+        return TextStyle(
+          fontSize: 18,
           color: CustomColors.dark_gray,
         );
         break;
@@ -117,6 +123,7 @@ extension _LabelStyle on LabelType {
         return TextStyle(
           fontSize: 18,
           color: CustomColors.link,
+          decoration: TextDecoration.underline,
         );
         break;
       default:
