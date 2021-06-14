@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   dashbook: ^0.1.0
   flutter_svg: ^0.22.0
   carousel_slider: ^3.0.0
