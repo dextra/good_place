@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:good_place/routes.dart';
 import 'package:good_place/theme.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
-  runApp(MaterialApp(
-    title: 'Liga do Bem',
-    theme: GoodPlaceTheme.lightTheme,
-    initialRoute: Routes.root,
-    routes: Routes.routes,
-  ));
+  initializeDateFormatting();
+
+  runApp(
+    MaterialApp(
+      title: 'Liga do Bem',
+      theme: GoodPlaceTheme.lightTheme,
+      initialRoute: Routes.root,
+      routes: Routes.routes,
+    ),
+  );
 }

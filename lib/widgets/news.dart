@@ -13,7 +13,8 @@ class News extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final format = new DateFormat('MMM/yyyy');
+    final format = new DateFormat('MMM/yyyy', 'pt_BR');
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
