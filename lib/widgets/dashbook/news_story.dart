@@ -10,8 +10,8 @@ class NewsStory {
       'default',
       (ctx) {
         return News(items: [
-          NewsItem(title: 'Title 1', content: 'Content 1'),
-          NewsItem(title: 'Title 2', content: 'Content 2'),
+          NewsItem(title: 'Title 1', description: 'Content 1'),
+          NewsItem(title: 'Title 2', description: 'Content 2'),
         ]);
       },
     );

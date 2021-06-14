@@ -1,9 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:good_place/good_place/home/home.dart';
-import 'package:good_place/models/event.dart';
+import 'package:good_place/utils/load_contend.dart';
 
 class HomeContainer extends StatefulWidget {
   @override
@@ -11,29 +8,24 @@ class HomeContainer extends StatefulWidget {
 }
 
 class _HomeContainerState extends State<HomeContainer> {
-  List<Event> _events;
-  bool _loading;
-
-  void _loadData() async {
-    String data = await rootBundle.loadString('assets/data/events.json');
-    setState(() {
-      _events = Event.parseList(jsonDecode(data));
-      _loading = false;
-    });
-  }
+  Future _loadNews;
 
   @override
   void initState() {
     super.initState();
-    _loading = true;
-    _loadData();
+    _loadNews = LoadContent().loadNews();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Home(
-      events: _events,
-      loading: _loading,
+    return FutureBuilder(
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        return Home(
+          news: snapshot.hasData ? snapshot.data : [],
+          loading: !snapshot.hasData,
+        );
+      },
+      future: _loadNews,
     );
   }
 }

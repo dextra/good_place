@@ -37,42 +37,43 @@ class News extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(10)),
               color: CustomColors.light_green),
           child: Column(
-            children: items
-                .map(
-                  (item) => Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10, bottom: 10),
-                        child: Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Label(
-                                      text: item.title,
-                                      labelType: LabelType.cardTitle,
-                                    ),
-                                    Label(
-                                      text: format.format(item.date),
-                                      labelType: LabelType.cardDate,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 10),
-                                Label(
-                                  text: item.content,
-                                  labelType: LabelType.cardBody,
-                                ),
-                              ],
-                            ),
+            children: [
+              for (var i = 0; i < items.length; i++)
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
+                      child: Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Label(
+                                    text: items[i].title,
+                                    labelType: LabelType.cardTitle,
+                                  ),
+                                  Label(
+                                    text: format.format(items[i].date),
+                                    labelType: LabelType.cardDate,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10),
+                              Label(
+                                text: items[i].description,
+                                labelType: LabelType.cardBody,
+                              ),
+                            ],
                           ),
                         ),
                       ),
+                    ),
+                    if (i < items.length - 1)
                       Padding(
                         padding: const EdgeInsets.only(right: 20, left: 20),
                         child: Container(
@@ -80,10 +81,9 @@ class News extends StatelessWidget {
                           color: CustomColors.medium_gray,
                         ),
                       ),
-                    ],
-                  ),
-                )
-                .toList(),
+                  ],
+                ),
+            ],
           ),
         ),
       ],

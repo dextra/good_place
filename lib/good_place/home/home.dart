@@ -1,19 +1,15 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:good_place/good_place/home/actions_carousel.dart';
 import 'package:good_place/good_place/home/first_news.dart';
-import 'package:good_place/models/event.dart';
 import 'package:good_place/models/news_item.dart';
 import 'package:good_place/widgets/base_scaffold.dart';
 import 'package:good_place/widgets/good_place.dart';
-import 'package:good_place/widgets/news.dart';
 
 class Home extends StatelessWidget {
-  final List<Event> events;
+  final List<NewsItem> news;
   final bool loading;
 
-  const Home({this.events, this.loading});
+  const Home({this.news, this.loading});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +25,9 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ActionsCarousel(),
-              FirstNews(),
+              FirstNews(
+                news: news,
+              ),
             ],
           ),
         ],

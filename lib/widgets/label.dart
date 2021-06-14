@@ -18,7 +18,8 @@ class Label extends StatelessWidget {
       text,
       style: labelType.style(context),
       textAlign: textAlign,
-      overflow: TextOverflow.ellipsis,
+      //overflow: TextOverflow.ellipsis,
+      softWrap: true,
     );
   }
 }
