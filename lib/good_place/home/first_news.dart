@@ -12,6 +12,7 @@ class FirstNews extends StatelessWidget {
     return Container(
       width: 400,
       child: News(
+        firstNews: true,
         title: 'Últimas notícias',
         items: news
             .map(

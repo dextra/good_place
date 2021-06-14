@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:good_place/models/news_item.dart';
 import 'package:good_place/theme.dart';
@@ -8,12 +10,18 @@ import 'package:intl/intl.dart';
 class News extends StatelessWidget {
   final List<NewsItem> items;
   final String title;
+  final bool firstNews;
 
-  const News({@required this.items, this.title});
+  const News({
+    @required this.items,
+    this.title,
+    this.firstNews = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     final format = new DateFormat('MMM/yyyy', 'pt_BR');
+    final newsCount = firstNews ? min(4, items.length) : items.length;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -39,7 +47,7 @@ class News extends StatelessWidget {
               color: CustomColors.light_green),
           child: Column(
             children: [
-              for (var i = 0; i < items.length; i++)
+              for (var i = 0; i < newsCount; i++)
                 Column(
                   children: [
                     Padding(
