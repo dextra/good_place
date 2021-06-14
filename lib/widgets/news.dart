@@ -99,19 +99,22 @@ class _NewCard extends StatelessWidget {
           ),
         ),
         if (item.content.isNotEmpty)
-          Align(
-            alignment: Alignment.centerRight,
-            child: GestureDetector(
-              child: Padding(
-                padding: const EdgeInsets.only(right: 10, bottom: 10),
-                child: Label(
-                  text: 'Ler mais',
-                  labelType: LabelType.link,
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 10, bottom: 10),
+                  child: Label(
+                    text: 'Ler mais',
+                    labelType: LabelType.link,
+                  ),
                 ),
-              ),
-              onTap: () => Navigator.of(context).pushNamed(
-                Routes.genericContent,
-                arguments: item,
+                onTap: () => Navigator.of(context).pushNamed(
+                  Routes.genericContent,
+                  arguments: item,
+                ),
               ),
             ),
           ),

@@ -12,9 +12,15 @@ class Header extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Padding(
-          child: Image.asset(Assets.logo),
-          padding: EdgeInsets.only(top: 10),
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            child: Padding(
+              child: Image.asset(Assets.logo),
+              padding: EdgeInsets.only(top: 10),
+            ),
+            onTap: () => Navigator.of(context).pushNamed(Routes.root),
+          ),
         ),
         SizedBox(width: 40),
         Row(
@@ -24,6 +30,7 @@ class Header extends StatelessWidget {
             _MenuItem(
               label: 'Home',
               selected: routeName == Routes.root,
+              navigateTo: () => Navigator.of(context).pushNamed(Routes.root),
             ),
             SizedBox(width: 60),
             _MenuItem(
@@ -61,26 +68,29 @@ class _MenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: navigateTo,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Label(
-            text: label.toUpperCase(),
-            labelType: LabelType.topMenu,
-          ),
-          Visibility(
-            visible: selected,
-            child: Container(
-              margin: EdgeInsets.only(top: 5),
-              color: CustomColors.crazy_green,
-              height: 6,
-              width: 100,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: navigateTo,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Label(
+              text: label.toUpperCase(),
+              labelType: LabelType.topMenu,
             ),
-          ),
-        ],
+            Visibility(
+              visible: selected,
+              child: Container(
+                margin: EdgeInsets.only(top: 5),
+                color: CustomColors.crazy_green,
+                height: 6,
+                width: 100,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
