@@ -9,4 +9,10 @@ class LoadContent {
     return GenericItem.parseList(jsonDecode(data))
       ..sort((a, b) => b.date.compareTo(a.date));
   }
+
+  Future<List<GenericItem>> loadActions() async {
+    String data = await rootBundle.loadString('assets/data/actions.json');
+    return GenericItem.parseList(jsonDecode(data))
+      ..sort((a, b) => b.date.compareTo(a.date));
+  }
 }

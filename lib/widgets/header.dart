@@ -41,13 +41,10 @@ class Header extends StatelessWidget {
             ),
             SizedBox(width: 60),
             _MenuItem(
-              label: 'Notícias',
-              selected: routeName == Routes.whatWeDo,
-            ),
-            SizedBox(width: 60),
-            _MenuItem(
               label: 'Ações',
               selected: routeName == Routes.ourActions,
+              navigateTo: () =>
+                  Navigator.of(context).pushNamed(Routes.ourActions),
             ),
             SizedBox(width: 60),
             _MenuItem(
@@ -74,24 +71,27 @@ class _MenuItem extends StatelessWidget {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: navigateTo,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Label(
-              text: label.toUpperCase(),
-              labelType: LabelType.topMenu,
-            ),
-            Visibility(
-              visible: selected,
-              child: Container(
-                margin: EdgeInsets.only(top: 5),
-                color: CustomColors.crazy_green,
-                height: 6,
-                width: 100,
+        child: Container(
+          width: 120,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Label(
+                text: label.toUpperCase(),
+                labelType: LabelType.topMenu,
               ),
-            ),
-          ],
+              Visibility(
+                visible: selected,
+                child: Container(
+                  margin: EdgeInsets.only(top: 5),
+                  color: CustomColors.crazy_green,
+                  height: 6,
+                  width: 100,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

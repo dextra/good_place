@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:good_place/good_place/generic_content/generic_content.dart';
 import 'package:good_place/good_place/home/home_container.dart';
+import 'package:good_place/good_place/our_actions/our_actions_container.dart';
 import 'package:good_place/good_place/who_we_are/who_we_are.dart';
 import 'package:good_place/models/generic_item.dart';
 
@@ -14,6 +15,7 @@ class Routes {
   static Map<String, WidgetBuilderWithArgs> get routes => {
         Routes.root: (context, args) => HomeContainer(),
         Routes.whoWeAre: (context, args) => WhoWeAre(),
+        Routes.ourActions: (context, args) => OurActionsContainer(),
         Routes.genericContent: (context, args) {
           final genericData = args as GenericItem;
 
