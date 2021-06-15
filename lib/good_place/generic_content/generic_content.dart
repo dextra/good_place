@@ -16,27 +16,32 @@ class GenericContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Label(
-              text: title,
-              labelType: LabelType.mediumTitle,
-            ),
-            SizedBox(height: 30),
-            if (imageUrl.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.only(bottom: 30),
-                child: Center(child: Image.asset(imageUrl)),
+      child: Center(
+        child: Container(
+          width: 1200,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Label(
+                text: title,
+                labelType: LabelType.mediumTitle,
               ),
-            Label(
-              text: content,
-              labelType: LabelType.mediumText,
-            ),
-          ],
+              SizedBox(height: 30),
+              if (imageUrl.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 30),
+                  child: Image.asset(imageUrl),
+                ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Label(
+                  text: content,
+                  labelType: LabelType.mediumText,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
