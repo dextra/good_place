@@ -35,6 +35,8 @@ class _OurActionsState extends State<OurActions> {
   Widget build(BuildContext context) {
     return BaseScaffold(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ActionFilter(
             years: _formatYearsList(),

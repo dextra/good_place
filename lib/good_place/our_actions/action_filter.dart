@@ -34,6 +34,8 @@ class ActionFilter extends StatelessWidget {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: years
               .map(
                 (year) => Padding(
@@ -52,6 +54,8 @@ class ActionFilter extends StatelessWidget {
           height: 20,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: months.entries
               .map(
                 (month) => Padding(
@@ -92,7 +96,10 @@ class _FilterItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        color: selected ? CustomColors.crazy_green : color,
+        decoration: BoxDecoration(
+          color: selected ? CustomColors.crazy_green : color,
+          borderRadius: BorderRadius.circular(20),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Label(text: label, labelType: LabelType.littleTitle),
