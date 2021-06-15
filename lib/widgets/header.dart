@@ -36,6 +36,8 @@ class Header extends StatelessWidget {
             _MenuItem(
               label: 'Quem somos',
               selected: routeName == Routes.whoWeAre,
+              navigateTo: () =>
+                  Navigator.of(context).pushNamed(Routes.whoWeAre),
             ),
             SizedBox(width: 60),
             _MenuItem(
