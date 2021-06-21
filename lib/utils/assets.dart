@@ -7,4 +7,5 @@ class Assets {
   static const yoga = 'assets/images/yoga.png';
   static const goodPlacePeople = 'assets/images/good_place_people.png';
   static const news = 'assets/images/news.png';
+  static const timeline_marker = 'assets/images/timeline_marker.png';
 }

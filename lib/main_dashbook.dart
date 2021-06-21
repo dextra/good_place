@@ -7,10 +7,12 @@ import 'package:good_place/widgets/dashbook/base_scaffold_story.dart';
 import 'package:good_place/widgets/dashbook/header_story.dart';
 import 'package:good_place/widgets/dashbook/label_story.dart';
 import 'package:good_place/widgets/dashbook/news_story.dart';
+import 'package:good_place/widgets/dashbook/timeline_story.dart';
 
 void main() {
   final dashbook = Dashbook(theme: ThemeData.light());
 
+  TimelineStory(dashbook);
   BeanCardStory(dashbook);
   ButtonStory(dashbook);
   CarouselStory(dashbook);
