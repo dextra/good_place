@@ -16,7 +16,7 @@ class Label extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: labelType.style(context),
+      style: labelType.style(),
       textAlign: textAlign,
       //overflow: TextOverflow.ellipsis,
       softWrap: true,
@@ -41,7 +41,7 @@ enum LabelType {
 }
 
 extension _LabelStyle on LabelType {
-  TextStyle style(BuildContext context) {
+  TextStyle style() {
     switch (this) {
       case LabelType.text:
         return TextStyle(

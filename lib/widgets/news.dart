@@ -17,41 +17,42 @@ class News extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Image.asset(
-                Assets.news,
-                width: 70,
-              ),
-              SizedBox(width: 15),
-              Label(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Image.asset(
+              Assets.news,
+              width: 70,
+            ),
+            SizedBox(width: 15),
+            Expanded(
+              child: Label(
                 text: title ?? 'Notícias',
-                labelType: LabelType.littleTitle,
+                labelType: LabelType.cardTitle,
               ),
+            ),
+          ],
+        ),
+        SizedBox(height: 15),
+        Container(
+          height: 520,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              color: CustomColors.light_green),
+          child: ListView(
+            children: [
+              for (var i = 0; i < items.length; i++)
+                _NewCard(
+                  item: items[i],
+                  showDivisor: i < items.length - 1,
+                )
             ],
           ),
-          SizedBox(height: 15),
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: CustomColors.light_green),
-            child: Column(
-              children: [
-                for (var i = 0; i < items.length; i++)
-                  _NewCard(
-                    item: items[i],
-                    showDivisor: i < items.length - 1,
-                  )
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

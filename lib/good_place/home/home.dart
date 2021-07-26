@@ -26,6 +26,7 @@ class Home extends StatelessWidget {
             children: [
               Expanded(child: ActionsCarousel()),
               Container(
+                padding: EdgeInsets.only(right: 30),
                 height: 650,
                 child: FirstNews(news: news),
               ),
