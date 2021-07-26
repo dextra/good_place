@@ -10,7 +10,7 @@ class FirstNews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
+      width: MediaQuery.of(context).size.width * 0.25,
       child: News(
         title: 'Últimas notícias',
         items: news,

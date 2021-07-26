@@ -10,8 +10,10 @@ class GoodPlace extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        SizedBox(width: 50),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Image.asset(
               Assets.heartBallon,
@@ -39,9 +41,11 @@ class GoodPlace extends StatelessWidget {
           ],
         ),
         SizedBox(width: 50),
-        Image.asset(
-          Assets.goodPlacePeople,
-          height: MediaQuery.of(context).size.height * 0.7,
+        Expanded(
+          flex: 2,
+          child: Image.asset(
+            Assets.goodPlacePeople,
+          ),
         ),
       ],
     );

@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ActionsCarousel(),
+              Expanded(child: ActionsCarousel()),
               Container(
                 height: 650,
                 child: FirstNews(news: news),
