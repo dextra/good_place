@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:good_place/good_place/our_actions/action_card.dart';
 import 'package:good_place/good_place/our_actions/action_filter.dart';
 import 'package:good_place/models/generic_item.dart';
 import 'package:good_place/widgets/base_scaffold.dart';
-import 'package:good_place/widgets/label.dart';
 import 'package:intl/intl.dart';
 
 class OurActions extends StatefulWidget {
@@ -51,11 +51,8 @@ class _OurActionsState extends State<OurActions> {
               });
             },
           ),
-          ..._filteredActions
-              .map((action) => Label(
-                    text: action.title,
-                  ))
-              .toList()
+          SizedBox(height: 70),
+          ..._filteredActions.map((action) => ActionCard(item: action)).toList()
         ],
       ),
     );
