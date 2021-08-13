@@ -4,11 +4,11 @@ import 'package:good_place/widgets/label.dart';
 
 class GenericContent extends StatelessWidget {
   final String title;
-  final String content;
-  final String imageUrl;
+  final String? content;
+  final String? imageUrl;
 
   const GenericContent({
-    this.title,
+    required this.title,
     this.content,
     this.imageUrl,
   });
@@ -28,18 +28,19 @@ class GenericContent extends StatelessWidget {
                 labelType: LabelType.mediumTitle,
               ),
               SizedBox(height: 30),
-              if (imageUrl.isNotEmpty)
+              if (imageUrl != null && imageUrl!.isNotEmpty)
                 Padding(
                   padding: const EdgeInsets.only(bottom: 30),
-                  child: Image.asset(imageUrl),
+                  child: Image.asset(imageUrl!),
                 ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Label(
-                  text: content,
-                  labelType: LabelType.mediumText,
+              if (content != null)
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Label(
+                    text: content!,
+                    labelType: LabelType.mediumText,
+                  ),
                 ),
-              ),
             ],
           ),
         ),

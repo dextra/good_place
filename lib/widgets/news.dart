@@ -8,10 +8,10 @@ import 'package:intl/intl.dart';
 
 class News extends StatelessWidget {
   final List<GenericItem> items;
-  final String title;
+  final String? title;
 
   const News({
-    @required this.items,
+    required this.items,
     this.title,
   });
 
@@ -61,7 +61,10 @@ class _NewCard extends StatelessWidget {
   final GenericItem item;
   final bool showDivisor;
 
-  const _NewCard({this.item, this.showDivisor});
+  const _NewCard({
+    required this.item,
+    required this.showDivisor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -84,22 +87,23 @@ class _NewCard extends StatelessWidget {
                       ),
                       Label(
                         text: new DateFormat('MMM/yyyy', 'pt_BR')
-                            .format(item.date),
+                            .format(item.date!),
                         labelType: LabelType.cardDate,
                       ),
                     ],
                   ),
                   SizedBox(height: 10),
-                  Label(
-                    text: item.description,
-                    labelType: LabelType.cardBody,
-                  ),
+                  if (item.description != null)
+                    Label(
+                      text: item.description!,
+                      labelType: LabelType.cardBody,
+                    ),
                 ],
               ),
             ),
           ),
         ),
-        if (item.content.isNotEmpty)
+        if (item.content != null && item.content!.isNotEmpty)
           MouseRegion(
             cursor: SystemMouseCursors.click,
             child: Align(

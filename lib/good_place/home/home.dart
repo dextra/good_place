@@ -9,7 +9,10 @@ class Home extends StatelessWidget {
   final List<GenericItem> news;
   final bool loading;
 
-  const Home({this.news, this.loading});
+  const Home({
+    required this.news,
+    this.loading = false,
+  });
 
   @override
   Widget build(BuildContext context) {

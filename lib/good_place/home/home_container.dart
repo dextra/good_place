@@ -8,7 +8,7 @@ class HomeContainer extends StatefulWidget {
 }
 
 class _HomeContainerState extends State<HomeContainer> {
-  Future _loadNews;
+  late Future _loadNews;
 
   @override
   void initState() {

@@ -1,12 +1,12 @@
 class GenericItem {
   String title;
-  String description;
-  DateTime date;
-  String content;
-  String imageUrl;
+  String? description;
+  DateTime? date;
+  String? content;
+  String? imageUrl;
 
   GenericItem({
-    this.title,
+    required this.title,
     this.description,
     this.date,
     this.content,

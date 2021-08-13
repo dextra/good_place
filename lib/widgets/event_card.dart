@@ -5,7 +5,7 @@ import 'package:good_place/widgets/label.dart';
 class EventCard extends StatelessWidget {
   final Event event;
 
-  EventCard({this.event});
+  EventCard({required this.event});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,11 @@ class EventCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
-                event.imageURL,
-                height: 80,
-              ),
+              if (event.imageURL != null)
+                Image.asset(
+                  event.imageURL!,
+                  height: 80,
+                ),
               SizedBox(width: 20),
               Column(
                 children: [

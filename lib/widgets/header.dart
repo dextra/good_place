@@ -7,7 +7,7 @@ import 'package:good_place/widgets/label.dart';
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final routeName = ModalRoute.of(context).settings.name;
+    final routeName = ModalRoute.of(context)?.settings.name;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -50,6 +50,8 @@ class Header extends StatelessWidget {
             _MenuItem(
               label: 'Sugestões',
               selected: routeName == Routes.ourActions,
+              navigateTo: () =>
+                  Navigator.of(context).pushNamed(Routes.ourActions),
             ),
           ],
         ),
@@ -60,10 +62,14 @@ class Header extends StatelessWidget {
 
 class _MenuItem extends StatelessWidget {
   final String label;
-  final Function navigateTo;
+  final VoidCallback navigateTo;
   final bool selected;
 
-  const _MenuItem({this.label, this.navigateTo, this.selected});
+  const _MenuItem({
+    required this.label,
+    required this.navigateTo,
+    required this.selected,
+  });
 
   @override
   Widget build(BuildContext context) {

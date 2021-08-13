@@ -1,11 +1,23 @@
 {
-    "name": "Liga do bem",
-    "short_name": "Liga do bem",
+    "name": "good_place",
+    "short_name": "good_place",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Liga do bem",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
-    "prefer_related_applications": false
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
 }

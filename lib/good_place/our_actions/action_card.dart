@@ -7,9 +7,8 @@ class ActionCard extends StatelessWidget {
   final GenericItem item;
 
   const ActionCard({
-    Key key,
-    @required this.item,
-  }) : super(key: key);
+    required this.item,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +18,11 @@ class ActionCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            item.imageUrl,
-            width: MediaQuery.of(context).size.width * 0.2,
-          ),
+          if (item.imageUrl != null)
+            Image.asset(
+              item.imageUrl!,
+              width: MediaQuery.of(context).size.width * 0.2,
+            ),
           SizedBox(width: 50),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -32,14 +32,17 @@ class ActionCard extends StatelessWidget {
                 text: item.title,
                 labelType: LabelType.mediumTitle,
               ),
-              SizedBox(height: 10),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.7,
-                child: Label(
-                  text: item.description,
-                  labelType: LabelType.mediumText,
+              if (item.description != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    child: Label(
+                      text: item.description!,
+                      labelType: LabelType.mediumText,
+                    ),
+                  ),
                 ),
-              ),
               SizedBox(height: 25),
               MouseRegion(
                 cursor: SystemMouseCursors.click,

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Carousel extends StatefulWidget {
   final List<Widget> items;
 
-  Carousel({@required this.items});
+  Carousel({required this.items});
 
   @override
   _CarouselState createState() => _CarouselState();

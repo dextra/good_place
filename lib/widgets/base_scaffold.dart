@@ -5,7 +5,7 @@ import 'package:good_place/widgets/header.dart';
 class BaseScaffold extends StatelessWidget {
   final Widget child;
 
-  const BaseScaffold({this.child});
+  const BaseScaffold({required this.child});
 
   @override
   Widget build(BuildContext context) {

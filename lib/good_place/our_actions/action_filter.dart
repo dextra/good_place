@@ -23,10 +23,10 @@ class ActionFilter extends StatelessWidget {
   final Function(int, int) onFilter;
 
   ActionFilter({
-    this.years,
-    this.selectedYear,
-    this.selectedMonth,
-    this.onFilter,
+    required this.years,
+    required this.selectedYear,
+    required this.selectedMonth,
+    required this.onFilter,
   });
 
   @override
@@ -85,9 +85,9 @@ class _FilterItem extends StatelessWidget {
   final bool selected;
 
   const _FilterItem({
-    this.label,
-    this.onTap,
-    this.color,
+    required this.label,
+    required this.onTap,
+    required this.color,
     this.selected = false,
   });
 

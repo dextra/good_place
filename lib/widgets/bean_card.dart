@@ -5,14 +5,14 @@ import 'package:good_place/widgets/label.dart';
 
 class BeanCard extends StatelessWidget {
   final String image;
-  final String label;
+  final String? label;
   final String buttonLabel;
   final VoidCallback onTap;
 
   BeanCard({
-    @required this.image,
-    @required this.buttonLabel,
-    @required this.onTap,
+    required this.image,
+    required this.buttonLabel,
+    required this.onTap,
     this.label,
   });
 
@@ -29,7 +29,7 @@ class BeanCard extends StatelessWidget {
               Image.asset(image, height: 200),
               if (label != null)
                 Label(
-                  text: label,
+                  text: label!,
                   labelType: LabelType.mediumTitle,
                 ),
             ],

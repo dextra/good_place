@@ -8,7 +8,7 @@ class OurActionsContainer extends StatefulWidget {
 }
 
 class _OurActionsContainerState extends State<OurActionsContainer> {
-  Future _loadActions;
+  late Future _loadActions;
 
   @override
   void initState() {

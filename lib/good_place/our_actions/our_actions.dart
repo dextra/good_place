@@ -9,16 +9,19 @@ class OurActions extends StatefulWidget {
   final List<GenericItem> actions;
   final bool loading;
 
-  const OurActions({this.actions, this.loading});
+  const OurActions({
+    required this.actions,
+    this.loading = false,
+  });
 
   @override
   _OurActionsState createState() => _OurActionsState();
 }
 
 class _OurActionsState extends State<OurActions> {
-  int _selectedMonth;
-  int _selectedYear;
-  List<GenericItem> _filteredActions;
+  late int _selectedMonth;
+  late int _selectedYear;
+  List<GenericItem> _filteredActions = [];
 
   @override
   void initState() {
@@ -58,17 +61,17 @@ class _OurActionsState extends State<OurActions> {
     );
   }
 
-  void filterActions({int year, int month}) {
+  void filterActions({required int year, required int month}) {
     setState(() {
       _filteredActions = widget.actions
           .where((element) =>
-              element.date.month == month && element.date.year == year)
+              element.date!.month == month && element.date!.year == year)
           .toList();
     });
   }
 
   List<int> _formatYearsList() {
-    return widget.actions.map((action) => action.date.year).toSet().toList()
+    return widget.actions.map((action) => action.date!.year).toSet().toList()
       ..sort((a, b) => b.compareTo(a));
   }
 }

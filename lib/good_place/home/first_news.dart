@@ -5,7 +5,7 @@ import 'package:good_place/widgets/news.dart';
 class FirstNews extends StatelessWidget {
   final List<GenericItem> news;
 
-  const FirstNews({this.news});
+  const FirstNews({required this.news});
 
   @override
   Widget build(BuildContext context) {

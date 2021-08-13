@@ -13,8 +13,8 @@ class Button extends StatelessWidget {
   final ButtonType type;
 
   const Button({
-    this.label,
-    this.onTap,
+    required this.label,
+    required this.onTap,
     this.type = ButtonType.contained,
   });
 

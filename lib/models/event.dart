@@ -1,12 +1,12 @@
 class Event {
   String title;
   String text;
-  String imageURL;
-  String link;
+  String? imageURL;
+  String? link;
 
   Event({
-    this.title,
-    this.text,
+    required this.title,
+    required this.text,
     this.imageURL,
     this.link,
   });
